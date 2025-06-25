@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librelivro</title>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+
+    <div class="cabecalho-container">
+        <div class="cabecalho-texto">
+            <h1>Librelivro</h1>
+            <h2>Seu lugar de opinião.</h2>
+        </div>
+        <img src="./src/imagens/logo.png" alt="Logo Librelivro" class="logo">
+    </div>
+
+    <div class="livros-container">
+        <!-- Livro 1 -->
+        <div class="livro-item">
+            <div class="livro-link" onclick="abrirModal('./src/imagens/Livro1.webp', 'https://a.co/d/eAWFEVe', 'O Diário de Anne Frank é um dos relatos mais comoventes dos horrores da guerra e do Holocausto. Escrito por Anne Frank entre 1942 e 1944, mostra a vida de uma adolescente judia escondida com sua família durante a ocupação nazista na Holanda.')">
+                <img src="./src/imagens/Livro1.webp" alt="Capa do Livro 1">
+            </div>
+        </div>
+
+        <!-- Livro 2 -->
+        <div class="livro-item">
+            <div class="livro-link" onclick="abrirModal('./src/imagens/Livro2.png', 'https://a.co/d/7HtTBYQ', 'Jean Valjean foi condenado a trabalho forçado nas galés e, por causa de inúmeras tentativas de fuga, teve que cumprir uma sentença de dezenove anos. Quando é liberto, percebe que a condição de ex-prisioneiro nunca o abandonará, motivo pelo qual troca de nome e recomeça sua vida.  É então que conhece Fantine, uma mulher que teve uma vida difícil, tendo até mesmo que abandonar sua filha, Cosette. Mas antes que Jean possa ajudá-las, o inspetor Javert se coloca no encalço do antigo forçado, determinado a levá-lo a justiça. Anos depois, a vida destes personagens irá se cruzar com o jovem Marius, um estudante engajado com a Revolução de 1832.')">
+                <img src="./src/imagens/Livro2.png" alt="Capa do Livro 2">
+            </div>
+        </div>
+
+        <!-- Livro 3 -->
+        <div class="livro-item">
+            <div class="livro-link" onclick="abrirModal('./src/imagens/Livro3.jpg', 'https://a.co/d/hipsmkU', 'Diário de um Banana é uma série de livros de Jeff Kinney que narra as desventuras hilárias de Greg Heffley, um garoto que está tentando sobreviver ao ensino fundamental. Cheio de desenhos engraçados e situações cômicas, o livro cativa crianças e adultos com seu humor único.')">
+                <img src="./src/imagens/Livro3.jpg" alt="Capa do Livro 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <span class="close-modal" onclick="fecharModal()">×</span>
+        <div class="modal-content">
+            <div class="modal-img-container">
+                <img src="" id="modalImagem" alt="Livro">
+                <a href="#" id="modalLink" class="modal-link" target="_blank">Comprar Livro</a>
+            </div>
+            <div class="modal-form">
+                <!-- Avaliação com estrelas -->
+                <div class="rating-container">
+                    <span class="rating-label">Avaliação do usuário:</span>
+                    <div class="rating" id="modalRating">
+                        <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+                    </div>
+                </div>
+
+                <textarea id="modalMensagem" placeholder="Escreva sua opinião aqui..."></textarea>
+                <button onclick="enviarMensagem()">Enviar</button>
+                <p id="modalConfirmacao" class="escondido">Sua mensagem foi enviada.</p>
+
+                <!-- Sinopse do livro -->
+                <div id="modalSinopse" class="sinopse"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Librelivro. Todos os direitos reservados.
+    </footer>
+
+    <script src="./src/main.js"></script>
+</body>
+</html>
